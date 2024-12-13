@@ -5,4 +5,87 @@
 body {
   font-family: "Hanken Grotesk", serif;
   background-color: #282726;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  width: 480px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 36px;
+}
+
+.header h1 {
+  font-size: 1.25rem;
+  color: #F9F4DA;
+}
+
+.header p {
+  font-size: .8rem;
+  color: #8E8E8E;
+}
+
+.status {
+  align-self: stretch;
+  background-color: #10A95B;
+  color: #F9F4DA;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.status h3,
+.status h4 {
+  margin: 0;
+}
+
+.count {
+  color: #F9F4DA;
+}
+
+.word {
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+}
+
+.letter {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  background-color: #323232;
+  color: #F9F4DA;
+  border-bottom: 1px solid #F9F4DA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.keyboard {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.key {
+  font-family: inherit;
+  background-color: #FCBA29;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #D7D7D7;
+  border-radius: 4px;
 }

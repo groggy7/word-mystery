@@ -4,9 +4,8 @@
 
 body {
   font-family: "Geist", serif;
-  background-color: #282726;
+  background-color: #111927;
   margin: 0;
-  height: 100vh;
   margin-top: 5em;
 }
 
@@ -21,7 +20,7 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 36px;
+  gap: 20px;
 }
 
 .header h1 {
@@ -40,10 +39,16 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.status h3 {
+  font-size: 1.25rem;
 }
 
 .status h3,
-.status h4 {
+.status p {
   margin: 0;
 }
 
@@ -53,18 +58,17 @@ main {
 
 .word {
   display: flex;
-  gap: 2px;
+  gap: 6px;
   justify-content: center;
 }
 
 .letter {
   display: inline-block;
-  width: 40px;
-  height: 40px;
-  font-size: 1rem;
-  background-color: #323232;
+  width: 50px;
+  height: 50px;
+  font-size: 1.25rem;
   color: #F9F4DA;
-  border-bottom: 1px solid #F9F4DA;
+  border-bottom: 3px solid #F9F4DA;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,6 +79,7 @@ main {
   gap: 0.5em;
   flex-wrap: wrap;
   justify-content: center;
+  padding-top: .5em;
 }
 
 .key {
@@ -85,4 +90,23 @@ main {
   height: 40px;
   border: 1px solid #D7D7D7;
   border-radius: 4px;
+}
+
+.key:hover {
+  background-color: #F7A41A;
+}
+
+.new-game-btn {
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #3B82F6;
+  padding: .5em 1em;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.new-game-btn:hover {
+  background-color: #2F69D4;
 }

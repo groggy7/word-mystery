@@ -3,17 +3,16 @@
 }
 
 body {
-  font-family: "Hanken Grotesk", serif;
+  font-family: "Geist", serif;
   background-color: #282726;
   margin: 0;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 5em;
 }
 
 #root {
   width: 480px;
+  margin: 0 auto;
 }
 
 main {
@@ -26,20 +25,17 @@ main {
 }
 
 .header h1 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: #F9F4DA;
 }
 
 .header p {
-  font-size: .8rem;
   color: #8E8E8E;
 }
 
 .status {
   align-self: stretch;
-  background-color: #10A95B;
   color: #F9F4DA;
-  height: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -83,6 +79,7 @@ main {
 
 .key {
   font-family: inherit;
+  font-size: 1rem;
   background-color: #FCBA29;
   width: 40px;
   height: 40px;

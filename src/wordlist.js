@@ -1,8 +1,8 @@
-export default function getRandomWord() {
+export default function getRandomWord(words) {
     return words[Math.ceil(Math.random() * words.length)]
 } 
 
-const words = [
+export const localWordList = [
     "apple",
     "grape",
     "peach",

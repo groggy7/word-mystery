@@ -1,25 +1,38 @@
 import './index.css'
-import { useState } from 'react'
-import { v4 as uuidv4 } from 'uuid';
-import getRandomWord from './wordlist';
+import { useEffect, useState } from 'react'
+import getRandomWord, {localWordList} from './wordlist';
 
 function App() {
-  const [word, setWord] = useState(() => getRandomWord())
+  const [wordList, setWordList] = useState([])
+  const [word, setWord] = useState("react")
   const [guessedLetters, setGuessedLetters] = useState([])
   const [wrongGuessCount, setWrongGuessCount] = useState(0)
+
+  useEffect(() => {
+      fetch("https://random-word-api.vercel.app/api?words=50")
+        .then(data => data.json())
+        .then(words => {
+          setWordList(words)
+          setWord(getRandomWord(words))
+        })
+        .catch((error) => {
+          console.log(error)
+          setWord(getRandomWord(localWordList))
+        })
+  }, [])
 
   const isGameWon = word.split("").every(letter => guessedLetters.includes(letter))
   const isGameLost = wrongGuessCount >= 8
   const isGameOver = isGameWon || isGameLost
 
-  const wordElement = word.split("").map(letter => {
+  const wordElement = word.split("").map((letter, index) => {
     const styles = {}
     if(isGameLost && !guessedLetters.includes(letter)) {
       styles.color = "#EC5D49"
     }
 
     return <span 
-      key={uuidv4()}
+      key={letter+index}
       className='letter'
       style={styles}
       >{guessedLetters.includes(letter) || isGameOver ? letter.toUpperCase() : ''}
@@ -38,7 +51,7 @@ function App() {
     }
 
     return <button 
-      key={uuidv4()}
+      key={letter}
       className='key'
       style={styles}
       onClick={() => addGuessedLetter(letter)}
@@ -55,7 +68,7 @@ function App() {
   function startNewGame() {
     setGuessedLetters([])
     setWrongGuessCount(0)
-    setWord(getRandomWord())
+    setWord(getRandomWord(wordList))
   }
   
   return (

@@ -90,6 +90,9 @@ main {
   height: 40px;
   border: 1px solid #D7D7D7;
   border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .key:hover {
@@ -109,4 +112,24 @@ main {
 
 .new-game-btn:hover {
   background-color: #2F69D4;
+}
+
+@media (max-width: 768px) {
+  body {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .letter {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    width: 400px;
+  }
 }
